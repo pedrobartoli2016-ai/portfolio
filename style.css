@@ -2648,3 +2648,50 @@ nav {
     position: relative;
     z-index: 3;
 }
+
+/* FONDO NEGRO GENERAL */
+
+html,
+body,
+body::before,
+body::after {
+    background-color: #000000 !important;
+}
+
+body {
+    background-image: none !important;
+}
+
+/* FONDO NEGRO DEFINITIVO - PBE */
+
+:root {
+    --azul: #000000;
+}
+
+html,
+body,
+main,
+nav,
+.nav-inicio,
+.hero,
+#inicio.hero,
+.proyectos,
+.portal-proyectos,
+.portal-contacto,
+.portal-hero,
+.catalogo,
+.fichas-audiovisuales,
+.ficha-produccion,
+.contacto,
+.footer,
+.pagina-especificaciones,
+.spec-main {
+    background-color: #000000 !important;
+}
+
+/* Eliminar el fondo azul de las portadas */
+.hero,
+#inicio.hero,
+.portal-hero {
+    background-image: none !important;
+}
