@@ -1044,3 +1044,19 @@ body::-webkit-scrollbar {
         min-height: 250px !important;
     }
 }
+
+/* INICIO - BOTONES 25% MÁS CORTOS */
+
+#inicio .hero-botones .boton {
+    height: 330px !important;
+    min-height: 330px !important;
+    aspect-ratio: auto !important;
+}
+
+/* VERSIÓN CELULAR */
+@media (max-width: 600px) {
+    #inicio .hero-botones .boton {
+        height: 188px !important;
+        min-height: 188px !important;
+    }
+}
