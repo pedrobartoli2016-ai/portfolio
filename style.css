@@ -503,3 +503,41 @@ body::-webkit-scrollbar {
     outline: none !important;
     box-shadow: none !important;
 }
+
+/* INICIO - NOMBRE Y SUBTÍTULO */
+
+/* Nombre: un poco más abajo que antes */
+body:not(.pagina-proyectos) h1 {
+    transform: translateY(-85px);
+}
+
+/* Subtítulo: acompaña al nombre */
+body:not(.pagina-proyectos) h1 + p {
+    transform: translateY(-85px);
+}
+
+/* TARJETAS DE NAVEGACIÓN MÁS ALTAS */
+body:not(.pagina-proyectos) .boton {
+    min-height: 270px;
+}
+
+/* INICIO - TARJETAS VERTICALES */
+
+body:not(.pagina-proyectos) .boton {
+    height: 480px !important;
+    min-height: 480px !important;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* VERSIÓN CELULAR */
+@media (max-width: 600px) {
+    body:not(.pagina-proyectos) .boton {
+        height: 260px !important;
+        min-height: 260px !important;
+    }
+}
