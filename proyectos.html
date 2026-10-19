@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,120 +10,159 @@
 
 <body class="pagina-proyectos">
 
-    <!-- NAVEGACIÓN -->
     <nav class="nav-proyectos">
-
-        <!-- LOGO Y BOTÓN VOLVER -->
         <div class="nav-proyectos-izquierda">
-
-            <a href="index.html"
-               class="logo"
-               aria-label="Volver al inicio">
-
+            <a href="index.html" class="logo" aria-label="Volver al inicio">
                 <span class="logo-letra">P</span>
                 <span class="logo-letra">B</span>
                 <span class="logo-letra">E</span>
                 <span class="logo-registrado">®</span>
-
             </a>
-
             <a href="index.html" class="volver-inicio-global">
                 ← VOLVER AL INICIO
             </a>
-
         </div>
 
-        <!-- ENLACES DE NAVEGACIÓN -->
         <div class="nav-links">
             <a href="index.html">INICIO</a>
             <a href="proyectos.html">PROYECTOS</a>
             <a href="contacto.html">CONTACTO</a>
         </div>
-
     </nav>
 
     <main>
-
-        <!-- ENCABEZADO -->
         <section class="portal-proyectos">
-
             <span class="etiqueta">PORTFOLIO / 2026</span>
-
-            <h1>
-                PROYECTOS<span class="asterisco">*</span>
-            </h1>
-
+            <h1>PROYECTOS<span class="asterisco">*</span></h1>
             <p class="portal-proyectos-descripcion">
                 Una selección de mis trabajos en creación de
                 contenido, producción y edición audiovisual.
             </p>
-
         </section>
 
-        <!-- CATÁLOGO DE PROYECTOS -->
         <section id="proyectos" class="proyectos">
 
-            <!-- BARTEIRA CICLOONS -->
-            <a class="proyecto"
-               href="https://www.youtube.com/@barteiracicloons"
-               target="_blank"
-               rel="noopener noreferrer">
+            <!-- 01 BARTEIRA CICLOONS -->
+            <div class="proyecto-contenedor">
 
-                <span class="numero">01</span>
+                <button class="proyecto proyecto-desplegable"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="detalle-barteira">
 
-                <h2>BARTEIRA CICLOONS</h2>
+                    <span class="numero">01</span>
+                    <h2>BARTEIRA CICLOONS</h2>
+                    <span class="flecha">↗</span>
 
-                <span class="flecha">↗</span>
+                    <img
+                        class="preview-proyecto"
+                        src="barteira.jpg.png"
+                        alt="Barteira Cicloons"
+                    >
+                </button>
 
-                <img
-                    class="preview-proyecto"
-                    src="barteira.jpg.png"
-                    alt="Barteira Cicloons"
-                >
+                <div id="detalle-barteira" class="proyecto-detalle" hidden>
+                    <p>
+                        Canal de Shorts dedicados a la historia y el entretenimiento.
+                        Producción y edición.
+                    </p>
 
-            </a>
+                    <a class="proyecto-enlace"
+                       href="https://www.youtube.com/@barteiracicloons"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        IR AL CANAL ↗
+                    </a>
+                </div>
 
-            <!-- PALADAR CULTURAL -->
-            <a class="proyecto"
-               href="https://www.youtube.com/playlist?list=PLbrC80T2OYqU"
-               target="_blank"
-               rel="noopener noreferrer">
+            </div>
 
-                <span class="numero">02</span>
+            <!-- 02 PROYECTOS AUDIOVISUALES -->
+            <div class="proyecto-contenedor">
 
-                <h2>PALADAR CULTURAL</h2>
+                <button class="proyecto proyecto-desplegable"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="detalle-audiovisual">
 
-                <span class="flecha">↗</span>
+                    <span class="numero">02</span>
+                    <h2>PROYECTOS AUDIOVISUALES</h2>
+                    <span class="flecha">↗</span>
 
-                <img
-                    class="preview-proyecto"
-                    src="paladar cultural.png"
-                    alt="Paladar Cultural"
-                >
+                    <img
+                        class="preview-proyecto"
+                        src="PROYECTOS FOTO.jpg"
+                        alt="Proyectos audiovisuales"
+                    >
+                </button>
 
-            </a>
+                <div id="detalle-audiovisual" class="proyecto-detalle" hidden>
+                    <p>
+                        Selección de cortometrajes de ficción en los que participé
+                        en distintas áreas de producción.
+                    </p>
 
-            <!-- PROYECTOS AUDIOVISUALES -->
-            <a class="proyecto"
-               href="audiovisual.html">
+                    <a class="proyecto-enlace" href="audiovisual.html">
+                        VER PRODUCCIONES ↗
+                    </a>
+                </div>
 
-                <span class="numero">03</span>
+            </div>
 
-                <h2>PROYECTOS AUDIOVISUALES</h2>
+            <!-- 03 PALADAR CULTURAL -->
+            <div class="proyecto-contenedor">
 
-                <span class="flecha">↗</span>
+                <button class="proyecto proyecto-desplegable"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="detalle-paladar">
 
-                <img
-                    class="preview-proyecto"
-                    src="PROYECTOS FOTO.jpg"
-                    alt="Proyectos audiovisuales"
-                >
+                    <span class="numero">03</span>
+                    <h2>PALADAR CULTURAL</h2>
+                    <span class="flecha">↗</span>
 
-            </a>
+                    <img
+                        class="preview-proyecto"
+                        src="paladar cultural.png"
+                        alt="Paladar Cultural"
+                    >
+                </button>
+
+                <div id="detalle-paladar" class="proyecto-detalle" hidden>
+                    <p>
+                        Programa de radio universitario realizado en conjunto.
+                        Producción, locución y edición.
+                    </p>
+
+                    <a class="proyecto-enlace"
+                       href="https://www.youtube.com/playlist?list=PLbrC80T2OYqU"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        VER PLAYLIST ↗
+                    </a>
+                </div>
+
+            </div>
 
         </section>
-
     </main>
+
+    <!-- DESPLEGABLES Y PREVIEW FIJA -->
+    <script>
+        document.querySelectorAll(".proyecto-desplegable").forEach(boton => {
+            boton.addEventListener("click", () => {
+                const detalle = document.getElementById(
+                    boton.getAttribute("aria-controls")
+                );
+
+                const abierto = boton.getAttribute("aria-expanded") === "true";
+
+                boton.setAttribute("aria-expanded", String(!abierto));
+                boton.classList.toggle("preview-fijo", !abierto);
+                detalle.hidden = abierto;
+            });
+        });
+    </script>
 
     <!-- EFECTO DE MOCO -->
     <script src="moco.js" defer></script>

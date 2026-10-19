@@ -1,22 +1,21 @@
-/* Efecto de moco global: lima, cactus y verde oscuro. */
+
+/* EFECTO MOCO - PBE */
+/* El moco sigue al mouse, independientemente del proyecto abierto. */
+
 (() => {
   const NS = "http://www.w3.org/2000/svg";
 
-  /* COLORES DE LAS TRES CAPAS */
   const COLOR = "#70ed25";
   const COLOR_CACTUS = "#668a45";
   const COLOR_OSCURO = "#142b1b";
 
-  /* CONFIGURACIÓN */
   const CANTIDAD = 12;
   const GOTAS_VIAJERAS = 12;
   const DURACION_VIAJERA = 15000;
 
-
-
-const botones = document.querySelectorAll(
-  ".boton, .nav-links a, .proyectos .proyecto, .contacto-portal-links a, .corto-info a, .spec-volver a, .spec-app, .volver-inicio-global"
-);
+  const botones = document.querySelectorAll(
+    ".boton, .nav-links a, .proyectos .proyecto, .contacto-portal-links a, .corto-info a, .spec-volver a, .spec-app, .volver-inicio-global"
+  );
 
   function crearSVG(tipo) {
     return document.createElementNS(NS, tipo);
@@ -25,7 +24,6 @@ const botones = document.querySelectorAll(
   botones.forEach((boton, indice) => {
     boton.classList.add("moco-interactivo");
 
-    /* ELIMINAR EFECTOS ANTERIORES */
     boton.querySelectorAll(
       ".moco-gota, .moco-lateral, .moco-recorrido, .moco-unido"
     ).forEach(elemento => elemento.remove());
@@ -41,15 +39,16 @@ const botones = document.querySelectorAll(
     svg.style.overflow = "visible";
     svg.style.pointerEvents = "none";
 
-    /*
-      MÁSCARA:
-      impide que las capas desplazadas
-      entren al interior del botón.
-    */
+    /* Inicialmente oculto */
+    svg.style.setProperty("visibility", "hidden", "important");
+
+    /* MASCARA */
+
     const defs = crearSVG("defs");
     const mascara = crearSVG("mask");
 
     const idMascara = `mascara-moco-${indice}`;
+
     mascara.setAttribute("id", idMascara);
     mascara.setAttribute("maskUnits", "userSpaceOnUse");
     mascara.setAttribute("maskContentUnits", "userSpaceOnUse");
@@ -68,39 +67,26 @@ const botones = document.querySelectorAll(
     svg.appendChild(defs);
 
     const grupoCapas = crearSVG("g");
+
     grupoCapas.setAttribute(
       "mask",
       `url(#${idMascara})`
     );
 
-    /*
-      TERCERA CAPA:
-      VERDE OSCURO CASI NEGRO.
-    */
+    /* TRES CAPAS */
+
     const formaOscura = crearSVG("path");
     formaOscura.setAttribute("fill", COLOR_OSCURO);
     formaOscura.setAttribute("fill-rule", "nonzero");
 
-    /*
-      SEGUNDA CAPA:
-      VERDE CACTUS.
-    */
     const formaCactus = crearSVG("path");
     formaCactus.setAttribute("fill", COLOR_CACTUS);
     formaCactus.setAttribute("fill-rule", "nonzero");
 
-    /*
-      PRIMERA CAPA:
-      VERDE LIMA.
-    */
     const forma = crearSVG("path");
     forma.setAttribute("fill", COLOR);
     forma.setAttribute("fill-rule", "nonzero");
 
-    /*
-      ORDEN DE PROFUNDIDAD:
-      OSCURO -> CACTUS -> LIMA
-    */
     grupoCapas.appendChild(formaOscura);
     grupoCapas.appendChild(formaCactus);
     grupoCapas.appendChild(forma);
@@ -123,7 +109,6 @@ const botones = document.querySelectorAll(
         `-28 -28 ${w + 56} ${h + 163}`
       );
 
-      /* ACTUALIZAR LA MÁSCARA */
       fondoMascara.setAttribute("x", -28);
       fondoMascara.setAttribute("y", -28);
       fondoMascara.setAttribute("width", w + 56);
@@ -136,7 +121,8 @@ const botones = document.querySelectorAll(
 
       const t = tiempo / 1000;
 
-      /* RESPIRACIÓN DEL BORDE */
+      /* RESPIRACION DEL BORDE */
+
       const onda = Math.sin(t * 1.15 + indice);
       const grosor = 8 + onda * 2;
 
@@ -153,21 +139,19 @@ const botones = document.querySelectorAll(
         Q ${x1} ${base} ${x1 - 18} ${base}
       `;
 
-      /* 12 GOTAS INFERIORES */
+      /* GOTAS INFERIORES */
+
       const paso = (w + 2 * grosor) / CANTIDAD;
 
       for (let i = CANTIDAD - 1; i >= 0; i--) {
-
         const centro = x0 + paso * (i + 0.5);
 
         const pulso = Math.sin(
-          t * (0.65 + i * 0.035)
-          + i * 1.7 + indice
+          t * (0.65 + i * 0.035) + i * 1.7 + indice
         );
 
         const largo =
-          17 + (i % 4) * 11
-          + (pulso + 1) * 12;
+          17 + (i % 4) * 11 + (pulso + 1) * 12;
 
         const ancho = Math.min(
           12 + (i % 3) * 4,
@@ -187,9 +171,11 @@ const botones = document.querySelectorAll(
 
         d += `
           L ${derecha} ${baseGota}
+
           C ${derecha - 2} ${base + largo * 0.4},
             ${centro + ancho * 0.38} ${punta},
             ${centro} ${punta}
+
           C ${centro - ancho * 0.38} ${punta},
             ${izquierda + 2} ${base + largo * 0.4},
             ${izquierda} ${baseGota}
@@ -204,14 +190,11 @@ const botones = document.querySelectorAll(
         Z
       `;
 
-      /*
-        12 GOTAS VIAJERAS:
-        LAVA SUAVE, VISCOSA Y ASIMÉTRICA.
-      */
+      /* GOTAS VIAJERAS */
+
       const progresoBase =
-        (((tiempo - inicioAnimacion)
-        % DURACION_VIAJERA)
-        + DURACION_VIAJERA)
+        (((tiempo - inicioAnimacion) % DURACION_VIAJERA)
+          + DURACION_VIAJERA)
         % DURACION_VIAJERA
         / DURACION_VIAJERA;
 
@@ -220,7 +203,6 @@ const botones = document.querySelectorAll(
         gota < GOTAS_VIAJERAS;
         gota++
       ) {
-
         const progreso =
           (progresoBase + gota / GOTAS_VIAJERAS) % 1;
 
@@ -237,8 +219,8 @@ const botones = document.querySelectorAll(
         let x, y, nx, ny, tx, ty;
 
         if (distancia < altoLateral) {
-
           /* SUBE POR LA IZQUIERDA */
+
           x = -margen;
           y = h - 16 - distancia;
 
@@ -250,8 +232,8 @@ const botones = document.querySelectorAll(
         } else if (
           distancia < altoLateral + anchoSuperior
         ) {
-
           /* AVANZA POR ARRIBA */
+
           distancia -= altoLateral;
 
           x = 16 + distancia;
@@ -263,10 +245,9 @@ const botones = document.querySelectorAll(
           ty = 0;
 
         } else {
-
           /* BAJA POR LA DERECHA */
-          distancia -=
-            altoLateral + anchoSuperior;
+
+          distancia -= altoLateral + anchoSuperior;
 
           x = w + margen;
           y = 16 + distancia;
@@ -277,7 +258,6 @@ const botones = document.querySelectorAll(
           ty = 1;
         }
 
-        /* PULSACIONES LENTAS E INDEPENDIENTES */
         const pulsoViajero = Math.sin(
           t * (0.55 + gota * 0.012)
           + gota * 1.7
@@ -285,8 +265,7 @@ const botones = document.querySelectorAll(
         );
 
         const largoViajero =
-          7 + (pulsoViajero + 1) * 3
-          + (gota % 3);
+          7 + (pulsoViajero + 1) * 3 + (gota % 3);
 
         const mitadBase =
           15 + (gota % 5) * 2.5;
@@ -301,10 +280,8 @@ const botones = document.querySelectorAll(
           return `${px} ${py}`;
         }
 
-        /*
-          DEFORMACIONES SUAVES:
-          mantienen la asimetría sin crear picos.
-        */
+        /* DEFORMACIONES */
+
         const deformacion = Math.sin(
           t * 0.75 + gota * 2.3 + indice
         );
@@ -330,10 +307,8 @@ const botones = document.querySelectorAll(
         const puntaDesplazada =
           deformacion * mitadBase * 0.22;
 
-        /*
-          FORMA DE LAVA SUAVE:
-          curvas amplias y redondeadas.
-        */
+        /* FORMA VISCOSA */
+
         d += `
           M ${punto(-mitadBase, -7)}
 
@@ -360,9 +335,8 @@ const botones = document.querySelectorAll(
         `;
       }
 
-      /*
-        HUECO INTERIOR EN SENTIDO CONTRARIO.
-      */
+      /* HUECO INTERIOR */
+
       d += `
         M 18 0
         Q 0 0 0 18
@@ -376,11 +350,8 @@ const botones = document.querySelectorAll(
         Z
       `;
 
-      /*
-        TERCERA CAPA:
-        VERDE CASI NEGRO.
-        MÁS DESPLAZADA QUE LAS OTRAS.
-      */
+      /* CAPA OSCURA */
+
       formaOscura.setAttribute("d", d);
 
       const desplazamientoOscuroX =
@@ -394,11 +365,8 @@ const botones = document.querySelectorAll(
         `translate(${desplazamientoOscuroX} ${desplazamientoOscuroY})`
       );
 
-      /*
-        SEGUNDA CAPA:
-        VERDE CACTUS.
-        DESPLAZAMIENTO INTERMEDIO.
-      */
+      /* CAPA CACTUS */
+
       formaCactus.setAttribute("d", d);
 
       const desplazamientoX =
@@ -412,12 +380,12 @@ const botones = document.querySelectorAll(
         `translate(${desplazamientoX} ${desplazamientoY})`
       );
 
-      /*
-        PRIMERA CAPA:
-        VERDE LIMA, SIN DESPLAZAMIENTO.
-      */
+      /* CAPA LIMA */
+
       forma.setAttribute("d", d);
     }
+
+    /* CONTROL DE ANIMACION */
 
     function animar(tiempo) {
       if (!activo) return;
@@ -432,19 +400,36 @@ const botones = document.querySelectorAll(
       activo = true;
       inicioAnimacion = performance.now();
 
+      svg.style.setProperty(
+        "visibility",
+        "visible",
+        "important"
+      );
+
       animacion = requestAnimationFrame(animar);
     }
 
     function detener() {
       activo = false;
-      cancelAnimationFrame(animacion);
+
+      if (animacion !== null) {
+        cancelAnimationFrame(animacion);
+        animacion = null;
+      }
+
+      svg.style.setProperty(
+        "visibility",
+        "hidden",
+        "important"
+      );
     }
+
+    /* SOLO SE ACTIVA CON EL MOUSE */
 
     boton.addEventListener("mouseenter", iniciar);
     boton.addEventListener("mouseleave", detener);
 
-    boton.addEventListener("focusin", iniciar);
-    boton.addEventListener("focusout", detener);
+    /* PRIMER DIBUJO, PERO OCULTO */
 
     dibujar(0);
   });

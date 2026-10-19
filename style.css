@@ -381,3 +381,125 @@ a:visited { color: var(--verde-lima); }
 #inicio .hero-botones .boton, #inicio .hero-botones .boton * { color: var(--verde-lima) !important; }
 #inicio .hero-botones .boton:hover, #inicio .hero-botones .boton:hover * { color: #000000 !important; }
 .volver-inicio-global:hover { color: #000000 !important; }
+
+/* EVITAR DESPLAZAMIENTO INNECESARIO */
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* OCULTAR BARRAS SIN BLOQUEAR EL SCROLL */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* DESPLEGABLES DE PROYECTOS */
+
+.proyecto-contenedor {
+    width: 100%;
+    position: relative;
+}
+
+.proyecto-desplegable {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    color: #B7FF36;
+    border: 0;
+    border-bottom: 1px solid #9b2948;
+    border-radius: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.proyecto-desplegable h2,
+.proyecto-desplegable .numero,
+.proyecto-desplegable .flecha {
+    color: #B7FF36;
+}
+
+.proyecto-desplegable .flecha {
+    transition: transform .25s ease;
+}
+
+.proyecto-desplegable[aria-expanded="true"] .flecha {
+    transform: rotate(90deg);
+}
+
+.proyecto-detalle {
+    padding: 18px 24px 30px 76px;
+    background: #000;
+    color: #B7FF36;
+    border-bottom: 1px solid #B7FF36;
+}
+
+.proyecto-detalle[hidden] {
+    display: none !important;
+}
+
+.proyecto-detalle p {
+    max-width: 680px;
+    margin: 0 0 22px;
+    line-height: 1.7;
+    color: #B7FF36;
+}
+
+.proyecto-enlace {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #000;
+    color: #B7FF36 !important;
+    border: 1px solid #B7FF36;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background .25s, color .25s;
+}
+
+.proyecto-enlace:hover {
+    background: #B7FF36;
+    color: #000 !important;
+}
+
+@media (max-width: 600px) {
+    .proyecto-detalle {
+        padding: 18px 16px 26px;
+    }
+}
+
+/* ESPACIO ENTRE MOCO Y DESCRIPCIÓN */
+
+.proyecto-detalle {
+    padding-top: 90px !important;
+}
+
+/* MANTENER FOTO VISIBLE AL ABRIR EL PROYECTO */
+
+.proyecto.preview-fijo .preview-proyecto {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* FOTO FIJA SIN FIJAR EL EFECTO DE MOCO */
+
+.proyecto.preview-fijo .preview-proyecto {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* El proyecto abierto no debe conservar estilos de hover */
+.proyecto.preview-fijo:not(:hover) {
+    outline: none !important;
+    box-shadow: none !important;
+}
