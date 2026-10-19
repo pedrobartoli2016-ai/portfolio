@@ -1,6 +1,6 @@
 
 /* EFECTO MOCO - PBE */
-/* El moco sigue al mouse, independientemente del proyecto abierto. */
+/* Versión original + miniaturas audiovisuales */
 
 (() => {
   const NS = "http://www.w3.org/2000/svg";
@@ -13,8 +13,9 @@
   const GOTAS_VIAJERAS = 12;
   const DURACION_VIAJERA = 15000;
 
+  /* Incluye las miniaturas de audiovisuales */
   const botones = document.querySelectorAll(
-    ".boton, .nav-links a, .proyectos .proyecto, .contacto-portal-links a, .corto-info a, .spec-volver a, .spec-app, .volver-inicio-global"
+    ".boton, .nav-links a, .proyectos .proyecto, .contacto-portal-links a, .corto-info a, .pagina-audiovisuales a.corto-imagen, .spec-volver a, .spec-app, .volver-inicio-global"
   );
 
   function crearSVG(tipo) {
@@ -42,7 +43,7 @@
     /* Inicialmente oculto */
     svg.style.setProperty("visibility", "hidden", "important");
 
-    /* MASCARA */
+    /* MÁSCARA */
 
     const defs = crearSVG("defs");
     const mascara = crearSVG("mask");
@@ -121,7 +122,7 @@
 
       const t = tiempo / 1000;
 
-      /* RESPIRACION DEL BORDE */
+      /* RESPIRACIÓN DEL BORDE */
 
       const onda = Math.sin(t * 1.15 + indice);
       const grosor = 8 + onda * 2;
@@ -385,7 +386,7 @@
       forma.setAttribute("d", d);
     }
 
-    /* CONTROL DE ANIMACION */
+    /* CONTROL DE ANIMACIÓN */
 
     function animar(tiempo) {
       if (!activo) return;
