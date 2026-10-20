@@ -5,19 +5,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contacto | Pedro Bartoli Espiñeira</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* AJUSTES EXCLUSIVOS DE CONTACTO */
+
+        .pagina-contacto .nav-links {
+            display: none !important;
+        }
+
+        .pagina-contacto .portal-contacto {
+            padding-top: 0;
+        }
+
+        .pagina-contacto .portal-contacto > p {
+            display: none !important;
+        }
+
+        .pagina-contacto .portal-contacto h1 {
+            margin-bottom: 25px !important;
+        }
+
+        .pagina-contacto .contacto-portal-links {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+    </style>
+
 </head>
 
 <body class="pagina-contacto">
 
+    <!-- NAVEGACIÓN -->
     <nav class="nav-contacto">
 
-        <!-- LOGO Y BOTÓN VOLVER -->
         <div class="nav-contacto-izquierda">
 
-            <a href="index.html" class="logo" aria-label="Volver al inicio">
+            <a href="index.html"
+               class="logo"
+               aria-label="Volver al inicio">
+
                 <span class="logo-letra">P</span><span class="logo-letra">B</span><span class="logo-letra">E</span><span class="logo-registrado">®</span>
+
             </a>
 
             <a href="index.html" class="volver-inicio-global">
@@ -26,30 +58,22 @@
 
         </div>
 
-        <div class="nav-links">
-            <a href="index.html">INICIO</a>
-            <a href="proyectos.html">PROYECTOS</a>
-            <a href="contacto.html">CONTACTO</a>
-        </div>
-
     </nav>
 
     <main>
 
         <section class="portal-contacto">
 
-            <span class="etiqueta">PORTFOLIO / CONTACTO</span>
+            <!-- ENCABEZADO -->
+            <span class="etiqueta">
+                PORTFOLIO / CONTACTO
+            </span>
 
             <h1>
                 DATOS DE <span class="destacado">CONTACTO</span><span class="asterisco">*</span>
             </h1>
 
-            <p>
-                ¿Tenés un proyecto en mente?
-                Estoy abierto a nuevas oportunidades,
-                colaboraciones y propuestas creativas.
-            </p>
-
+            <!-- ENLACES DE CONTACTO -->
             <div class="contacto-portal-links">
 
                 <!-- WHATSAPP -->
@@ -58,11 +82,15 @@
                    rel="noopener noreferrer">
 
                     <span>01 / WHATSAPP</span>
-                    <strong>11 3237-6571 ↗</strong>
 
-                    <img class="contacto-preview"
-                         src="WPP FONDO.png"
-                         alt="WhatsApp">
+                    <strong>
+                        11 3237-6571 ↗
+                    </strong>
+
+                    <img
+                        class="contacto-preview"
+                        src="WPP FONDO.png"
+                        alt="WhatsApp">
 
                 </a>
 
@@ -72,11 +100,15 @@
                    rel="noopener noreferrer">
 
                     <span>02 / LINKEDIN</span>
-                    <strong>VER PERFIL ↗</strong>
 
-                    <img class="contacto-preview"
-                         src="linkedin fondo.png"
-                         alt="LinkedIn">
+                    <strong>
+                        VER PERFIL ↗
+                    </strong>
+
+                    <img
+                        class="contacto-preview"
+                        src="linkedin fondo.png"
+                        alt="LinkedIn">
 
                 </a>
 
@@ -86,11 +118,15 @@
                    rel="noopener noreferrer">
 
                     <span>03 / YOUTUBE</span>
-                    <strong>BARTEIRA CICLOONS ↗</strong>
 
-                    <img class="contacto-preview"
-                         src="youtube logo.png"
-                         alt="YouTube">
+                    <strong>
+                        BARTEIRA CICLOONS ↗
+                    </strong>
+
+                    <img
+                        class="contacto-preview"
+                        src="youtube logo.png"
+                        alt="YouTube">
 
                 </a>
 
@@ -100,11 +136,15 @@
                    rel="noopener noreferrer">
 
                     <span>04 / GMAIL</span>
-                    <strong>ENVIAR CORREO ↗</strong>
 
-                    <img class="contacto-preview"
-                         src="gmail fondo.png"
-                         alt="Gmail">
+                    <strong>
+                        ENVIAR CORREO ↗
+                    </strong>
+
+                    <img
+                        class="contacto-preview"
+                        src="gmail fondo.png"
+                        alt="Gmail">
 
                 </a>
 
@@ -114,6 +154,7 @@
 
     </main>
 
+    <!-- EFECTO DE MOCO -->
     <script src="moco.js" defer></script>
 
 </body>
