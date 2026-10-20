@@ -1398,3 +1398,652 @@ body::-webkit-scrollbar {
 .pagina-audiovisuales .corto::after {
     display: none !important;
 }
+
+/* BOTONES VOLVER - SIEMPRE VERDE LIMA */
+
+a.volver-inicio-global,
+a.volver-inicio-global:visited,
+a.volver-inicio-global:hover,
+a.volver-inicio-global:focus-visible,
+nav a.volver-inicio-global,
+nav a.volver-inicio-global:hover {
+    color: #B7FF36 !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    text-decoration: underline !important;
+}
+
+/* MANTENER EL TEXTO VERDE CON EL MOCO */
+
+a.volver-inicio-global.moco-interactivo:hover,
+a.volver-inicio-global.moco-interactivo:focus-visible {
+    color: #B7FF36 !important;
+}
+
+/* ==================================
+   INICIO - CUARTO BOTÓN SOBRE MÍ
+   ================================== */
+
+.hero-sobre-mi {
+    width: 100%;
+    margin-top: 18px;
+}
+
+/* Botón horizontal completo */
+.hero-sobre-mi .boton-sobre-mi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 110px;
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: visible;
+
+    text-align: center;
+}
+
+/* Texto del botón */
+.hero-sobre-mi .boton-texto {
+    position: relative;
+    z-index: 2;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+
+    .hero-sobre-mi {
+        margin-top: 12px;
+    }
+
+    .hero-sobre-mi .boton-sobre-mi {
+        min-height: 85px;
+    }
+
+}
+
+/* =====================================
+   SOBRE MÍ - CV DIGITAL
+   ===================================== */
+
+.pagina-sobre-mi {
+    background: #080808;
+    color: #fff;
+}
+
+/* NAVEGACIÓN */
+
+.nav-sobre-mi {
+    padding: 30px 5%;
+}
+
+.nav-sobre-mi-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.pagina-sobre-mi .volver-inicio-global,
+.pagina-sobre-mi .volver-inicio-global:hover {
+    color: #B7FF36 !important;
+    background: transparent !important;
+}
+
+/* CONTENEDOR */
+
+.sobre-mi-contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto 100px;
+}
+
+/* SECCIONES */
+
+.sobre-mi-seccion {
+    padding: 45px 0;
+    border-bottom: 1px solid #333;
+}
+
+.sobre-mi-etiqueta {
+    display: block;
+    color: #B7FF36;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+/* INFORMACIÓN PERSONAL */
+
+.sobre-mi-presentacion {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.sobre-mi-foto {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #222;
+    overflow: hidden;
+}
+
+.sobre-mi-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sobre-mi-datos h1 {
+    font-size: clamp(36px, 5vw, 75px);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin: 0 0 25px;
+}
+
+.sobre-mi-datos h1 span {
+    display: block;
+    color: #B7FF36;
+}
+
+.sobre-mi-datos h2 {
+    color: #B7FF36;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.sobre-mi-datos p {
+    color: #ccc;
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+/* FORMACIÓN */
+
+.sobre-mi-estudio {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px 0;
+    border-bottom: 1px solid #292929;
+}
+
+.sobre-mi-estudio:last-child {
+    border-bottom: none;
+}
+
+.sobre-mi-estudio h3 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.sobre-mi-estudio p {
+    color: #aaa;
+    margin: 0;
+}
+
+.sobre-mi-estudio-estado {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.sobre-mi-estudio-estado span {
+    color: #aaa;
+}
+
+.sobre-mi-estudio-estado strong {
+    color: #B7FF36;
+}
+
+/* IDIOMAS */
+
+.sobre-mi-idioma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #292929;
+}
+
+.sobre-mi-idioma strong {
+    font-size: 22px;
+}
+
+.sobre-mi-idioma span {
+    color: #B7FF36;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* CONTACTO Y DESCARGA */
+
+.sobre-mi-correo {
+    display: inline-block;
+    color: #fff;
+    font-size: clamp(15px, 2.5vw, 22px);
+    margin-bottom: 35px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.sobre-mi-correo:hover {
+    color: #B7FF36;
+}
+
+.sobre-mi-descargar {
+    display: flex;
+    width: 100%;
+    min-height: 110px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+
+    .nav-sobre-mi {
+        padding: 25px 5%;
+    }
+
+    .nav-sobre-mi-izquierda {
+        gap: 20px;
+    }
+
+    .sobre-mi-contenedor {
+        margin: 25px auto 60px;
+    }
+
+    .sobre-mi-seccion {
+        padding: 35px 0;
+    }
+
+    .sobre-mi-presentacion {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .sobre-mi-foto {
+        max-width: 240px;
+    }
+
+    .sobre-mi-estudio {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sobre-mi-estudio-estado {
+        text-align: left;
+    }
+
+    .sobre-mi-estudio h3 {
+        font-size: 20px;
+    }
+
+    .sobre-mi-idioma strong {
+        font-size: 18px;
+    }
+
+    .sobre-mi-descargar {
+        min-height: 85px;
+    }
+}
+
+/* =====================================
+   SOBRE MÍ - BOTONES VERDE LIMA
+   ===================================== */
+
+/* Botón DESCARGAR CV */
+.pagina-sobre-mi a.sobre-mi-descargar,
+.pagina-sobre-mi a.sobre-mi-descargar:visited {
+    background: #B7FF36 !important;
+    color: #080808 !important;
+    border: 1px solid #B7FF36 !important;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+.pagina-sobre-mi .sobre-mi-descargar .boton-texto {
+    color: #080808 !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Botón VOLVER AL INICIO */
+.pagina-sobre-mi a.volver-inicio-global,
+.pagina-sobre-mi a.volver-inicio-global:visited {
+    color: #B7FF36 !important;
+    border-color: #B7FF36 !important;
+    text-decoration: none;
+}
+
+/* Mantener el verde al pasar el mouse */
+.pagina-sobre-mi a.sobre-mi-descargar:hover {
+    background: #B7FF36 !important;
+    color: #080808 !important;
+}
+
+.pagina-sobre-mi a.volver-inicio-global:hover {
+    color: #B7FF36 !important;
+}
+
+/* =====================================
+   INICIO - BOTONES COMPACTOS (35% MENOS)
+   Tres arriba y uno ancho abajo
+   ===================================== */
+
+body:has(.hero-sobre-mi) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body:has(.hero-sobre-mi) main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+}
+
+body:has(.hero-sobre-mi) #inicio.hero {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    padding: 15px 3% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body:has(.hero-sobre-mi) #inicio.hero h1 {
+    transform: none;
+    margin: 0 auto 12px !important;
+}
+
+body:has(.hero-sobre-mi) #inicio.hero > p {
+    transform: none;
+    margin: 0 0 20px !important;
+}
+
+body:has(.hero-sobre-mi) #inicio .hero-botones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 10px;
+    margin-top: 0 !important;
+}
+
+/* Reemplaza también los tamaños antiguos con !important */
+body:has(.hero-sobre-mi) #inicio .hero-botones .boton {
+    width: 100%;
+    height: 97.5px !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    margin-top: 0;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body:has(.hero-sobre-mi) .hero-sobre-mi {
+    width: 100%;
+    margin-top: 10px;
+}
+
+body:has(.hero-sobre-mi) .hero-sobre-mi .boton {
+    width: 100%;
+    height: 32.5px !important;
+    min-height: 0 !important;
+    margin-top: 0;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000 !important;
+    border: 1px solid #B7FF36 !important;
+    color: #B7FF36 !important;
+    font-size: 13px;
+}
+
+body:has(.hero-sobre-mi) .hero-sobre-mi .boton-texto {
+    color: #B7FF36 !important;
+}
+
+body:has(.hero-sobre-mi) .hero-sobre-mi .boton:hover,
+body:has(.hero-sobre-mi) .hero-sobre-mi .boton:hover .boton-texto {
+    background: #B7FF36 !important;
+    color: #000 !important;
+}
+
+@media (max-width: 768px) {
+    body:has(.hero-sobre-mi) #inicio .hero-botones {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    body:has(.hero-sobre-mi) #inicio .hero-botones .boton {
+        height: 45px !important;
+        min-height: 0 !important;
+    }
+
+    body:has(.hero-sobre-mi) .hero-sobre-mi .boton {
+        height: 45px !important;
+        min-height: 0 !important;
+    }
+}
+
+
+/* ============================================
+   MOCO - SIEMPRE EN PRIMER PLANO
+   ============================================ */
+
+/* El elemento activo se coloca sobre los elementos vecinos. */
+.moco-interactivo:hover,
+.moco-interactivo:focus-visible,
+.moco-interactivo:focus-within {
+    z-index: 100 !important;
+}
+
+/* El SVG del moco se dibuja por encima del fondo y del contenido. */
+.moco-interactivo > .moco-unido,
+#inicio .hero-botones .boton > .moco-unido,
+.pagina-contacto .contacto-portal-links a.moco-interactivo > .moco-unido,
+.pagina-audiovisuales a.corto-imagen.moco-interactivo > .moco-unido {
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    overflow: visible !important;
+}
+
+/* El texto y las imágenes quedan detrás del moco, sin ocultarse. */
+.moco-interactivo > :not(.moco-unido),
+#inicio .hero-botones .boton .boton-texto,
+.hero-sobre-mi .boton-texto {
+    z-index: 1 !important;
+}
+
+/* El contenedor del cuarto botón no tapa las gotas de los tres superiores. */
+#inicio .hero-botones {
+    position: relative;
+    z-index: 2;
+    overflow: visible !important;
+}
+
+#inicio .hero-sobre-mi {
+    position: relative;
+    z-index: 1;
+}
+
+#inicio .hero-sobre-mi:has(.boton:hover),
+#inicio .hero-sobre-mi:has(.boton:focus-visible) {
+    z-index: 101;
+}
+
+/* INICIO - TÍTULO Y SUBTÍTULO ARRIBA */
+
+#inicio.hero {
+    justify-content: flex-start !important;
+    padding-top: 5px !important;
+}
+
+/* Nombre */
+#inicio.hero h1 {
+    transform: none !important;
+    margin: 0 auto 8px !important;
+}
+
+/* Editor audiovisual - Creador de contenido */
+#inicio.hero h1 + p {
+    transform: none !important;
+    margin: 0 auto 30px !important;
+}
+
+/* Botones debajo del encabezado */
+#inicio .hero-botones {
+    margin-top: 0 !important;
+}
+
+/* INICIO - BOTONES 25% MÁS ALTOS */
+
+/* Tres botones superiores */
+#inicio .hero-botones .boton {
+    height: 122px !important;
+    min-height: 122px !important;
+    aspect-ratio: auto !important;
+}
+
+/* Botón SOBRE MÍ */
+#inicio .hero-sobre-mi .boton {
+    height: 41px !important;
+    min-height: 41px !important;
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    #inicio .hero-botones .boton,
+    #inicio .hero-sobre-mi .boton {
+        height: 56px !important;
+        min-height: 56px !important;
+    }
+}
+
+/* INICIO - BOTONES 20% MÁS ALTOS */
+
+/* Tres botones superiores */
+#inicio .hero-botones .boton {
+    height: 146.4px !important;
+    min-height: 146.4px !important;
+    aspect-ratio: auto !important;
+}
+
+/* Botón SOBRE MÍ */
+#inicio .hero-sobre-mi .boton {
+    height: 49.2px !important;
+    min-height: 49.2px !important;
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    #inicio .hero-botones .boton,
+    #inicio .hero-sobre-mi .boton {
+        height: 67.2px !important;
+        min-height: 67.2px !important;
+    }
+}
+
+/* ==========================================
+   INICIO - AJUSTE DE BOTONES
+   SIN MODIFICAR LA ESTÉTICA
+   ========================================== */
+
+/* Mantener el título y subtítulo arriba */
+body:has(.hero-sobre-mi) #inicio.hero {
+    justify-content: flex-start !important;
+    padding-top: 5px !important;
+}
+
+body:has(.hero-sobre-mi) #inicio.hero h1 {
+    transform: none !important;
+    margin: 0 auto 8px !important;
+}
+
+body:has(.hero-sobre-mi) #inicio.hero h1 + p {
+    transform: none !important;
+    margin: 0 auto 30px !important;
+}
+
+/* Tres botones superiores */
+body:has(.hero-sobre-mi) #inicio .hero-botones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 10px;
+    margin-top: 0 !important;
+    overflow: visible !important;
+}
+
+body:has(.hero-sobre-mi) #inicio .hero-botones .boton {
+    width: 100%;
+    height: 146.4px !important;
+    min-height: 146.4px !important;
+    aspect-ratio: auto !important;
+    margin-top: 0;
+}
+
+/* Cuarto botón: SOBRE MÍ */
+body:has(.hero-sobre-mi) #inicio .hero-sobre-mi {
+    width: 100%;
+    margin-top: 10px;
+}
+
+body:has(.hero-sobre-mi) #inicio .hero-sobre-mi .boton {
+    width: 100%;
+    height: 49.2px !important;
+    min-height: 49.2px !important;
+    margin-top: 0;
+}
+
+/* Moco por encima del texto y los botones */
+#inicio .moco-interactivo {
+    position: relative;
+    overflow: visible !important;
+}
+
+#inicio .moco-interactivo:hover,
+#inicio .moco-interactivo:focus-visible {
+    z-index: 100 !important;
+}
+
+#inicio .moco-interactivo > .moco-unido {
+    z-index: 1000 !important;
+    pointer-events: none !important;
+}
+
+#inicio .moco-interactivo > .boton-texto {
+    z-index: 1 !important;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    body:has(.hero-sobre-mi) #inicio .hero-botones {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    body:has(.hero-sobre-mi) #inicio .hero-botones .boton,
+    body:has(.hero-sobre-mi) #inicio .hero-sobre-mi .boton {
+        height: 67.2px !important;
+        min-height: 67.2px !important;
+    }
+}
